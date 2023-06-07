@@ -1,25 +1,19 @@
 import React, { Component } from "react";
-import { View, VirtualizedList } from "react-native";
 import { Text } from "react-native-elements";
+import { View } from "react-native";
+import { Button } from "react-native-elements";
+import { NavigationContainer } from '@react-navigation/native';
 
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import Calculator from "./Calculator";
-import Quotes from "./Quotes";
-
-
-
-
-
-class HomePage extends Component {
-    
-    render() {
-        return(
+function HomePage({ navigation }) {
+    return (
+        <View>
             <Text>HP</Text>
-        );
-    }
+            <Button
+                title="Go to Math"
+                onPress={() => navigation.navigate('Math')}
+            />
+        </View>
+    );
 }
-
-
 export default HomePage;
