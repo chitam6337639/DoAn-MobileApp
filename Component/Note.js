@@ -21,14 +21,12 @@ const Note = () => {
         if (!text) {
             return;
         }
-        const copyNotes = [...notes]
-        if (SelectedIndex != null)
+        let copyNotes = [...notes]
+        if (SelectedIndex !== null)
         {
             copyNotes[SelectedIndex]= text
         }
-        else copyNotes=copyNotes.concat(text)
-
-
+        else {copyNotes=copyNotes.concat(text)}
 
         setNotes(copyNotes)
         setNoteModalOpen(false)
@@ -78,7 +76,7 @@ const Note = () => {
                     <Text style={styles.modalHeading}>Add a note here</Text>
                 </View>
                 <View>
-                    <TextInput onChangeText={setText} value={text} multiline style={{borderWidth:1}} >
+                    <TextInput onChangeText={setText} value={text} multiline style={{borderWidth:1 ,padding:10}} >
 
                     </TextInput>
                 </View>
