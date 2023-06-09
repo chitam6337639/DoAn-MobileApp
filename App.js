@@ -26,8 +26,8 @@ class App extends Component {
     return (
       <NavigationContainer>
         <Drawer.Navigator>
-          <Drawer.Screen name ="Note" component={Note} />
           <Drawer.Screen name="Home" component={StackNavigator} />
+          <Drawer.Screen name ="Note" component={Note} />
           <Drawer.Screen name="Calculator" component={Calculator} />
           <Drawer.Screen name="Quotes" component={Quotes} />
           <Drawer.Screen name="Dictionary" component={Dictionary} />
