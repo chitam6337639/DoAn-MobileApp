@@ -10,6 +10,8 @@ import Dictionary from './Component/Dictionary';
 import { createStackNavigator } from '@react-navigation/stack';
 import Math from './Component/Math';
 import Note from './Component/Note';
+import { Icon } from 'react-native-elements';
+import { FontAwesome } from '@expo/vector-icons';
 const Stack = createStackNavigator();
 
 function StackNavigator() {
@@ -26,12 +28,42 @@ class App extends Component {
     return (
       <NavigationContainer>
         <Drawer.Navigator>
-          <Drawer.Screen name="Home" component={StackNavigator} />
+          <Drawer.Screen name="Home" component={StackNavigator}  options={{
+            drawerIcon:({focused,size}) => (<FontAwesome
+              name="home"
+              size={size}
+              color={focused?'#7cc':'#ccc'}
+            />)
+          }}/>
           
-          <Drawer.Screen name ="Note" component={Note} />
-          <Drawer.Screen name="Calculator" component={Calculator} />
-          <Drawer.Screen name="Quotes" component={Quotes} />
-          <Drawer.Screen name="Dictionary" component={Dictionary} />
+          <Drawer.Screen name ="Note" component={Note} options={{
+            drawerIcon:({focused,size}) => (<FontAwesome
+              name="sticky-note-o"
+              size={size}
+              color={focused?'#7cc':'#ccc'}
+            />)
+          }} />
+          <Drawer.Screen name="Calculator" component={Calculator} options={{
+            drawerIcon:({focused,size}) => (<FontAwesome
+              name="calculator"
+              size={size}
+              color={focused?'#7cc':'#ccc'}
+            />)
+          }}/>
+          <Drawer.Screen name="Quotes" component={Quotes} options={{
+            drawerIcon:({focused,size}) => (<FontAwesome
+              name="quote-left"
+              size={size}
+              color={focused?'#7cc':'#ccc'}
+            />)
+          }}/>
+          <Drawer.Screen name="Dictionary" component={Dictionary} options={{
+            drawerIcon:({focused,size}) => (<FontAwesome
+              name="book"
+              size={size}
+              color={focused?'#7cc':'#ccc'}
+            />)
+          }}/>
         </Drawer.Navigator>
       </NavigationContainer>
 
