@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 function HomePage({ navigation }) {
     return (
         <View>
-            <Text>HP</Text>
+           
             <Button
                 title="Go to Math"
                 onPress={() => navigation.navigate('Math')}

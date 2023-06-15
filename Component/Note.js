@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { Text, View, StyleSheet, ScrollView, Button, Modal, TextInput, TouchableOpacity } from "react-native";
-
+import * as Animatable from 'react-native-animatable';
 
 
 const Note = () => {
@@ -41,7 +41,8 @@ const Note = () => {
     }
 
     return (
-        <View style={{flex:1}}>
+        <Animatable.View animation='fadeInDown' style={styles.anime} duration={500} delay={500}>
+        <View >
             <View style={styles.buttonChoice}>
                 <Button title={listView ? "FullView" : "List View"} onPress={() => setListView(!listView)}></Button>
             </View>
@@ -59,9 +60,6 @@ const Note = () => {
                             )
                         )
                     }
-
-
-
                 </View>
                 <View style={{ padding: 10, alignItems: 'flex-end' }}>
                     <Button style={[{ justifyContent: 'flex-end', alignItems: 'flex-end' }]} title="ADD NOTE" onPress={() => {
@@ -93,7 +91,7 @@ const Note = () => {
             </Modal>
 
         </View>
-
+        </Animatable.View>
     );
 }
 
@@ -107,6 +105,9 @@ const styles = StyleSheet.create({
     //     justifyContent:'flex-end'
     // }
 
+    anime:{
+    flex:1
+    },
 
     noteContainer: {
         padding: 10,

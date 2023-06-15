@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-
+import * as Animatable from 'react-native-animatable';
 class Calculator extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +39,10 @@ class Calculator extends Component {
   };
   render() {
     return (
+      <Animatable.View animation='fadeInDown' duration={500} delay={500}>
       <View>
-        <View>
-          <Text style={styles.text}>{this.state.ketqua}</Text>
+        <View >
+          <Text style={[styles.text,]}>{this.state.ketqua}</Text>
         </View>
         <View style={styles.bigview}>
           <View style={styles.row}>
@@ -70,6 +71,7 @@ class Calculator extends Component {
           </View>
         </View>
       </View>
+      </Animatable.View>
     );
   }
 
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
     paddingTop: 300,
     borderWidth: 1,
     fontSize: 20,
-    marginBottom: 90,
+    marginBottom: 100,
     textAlign: "center",
   },
   button: {
