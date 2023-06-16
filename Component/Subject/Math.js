@@ -19,10 +19,13 @@ function Math({ navigation }) {
 
 
             ))}
-            <Button
-                title="Go Back"
-                onPress={() => navigation.goBack()}
-            />
+            <View style={{paddingTop:20}}>
+                <Button
+                    title="Go Back"
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
+            
         </View>
     );
 }

@@ -16,10 +16,13 @@ function English({ navigation }) {
                     </Card>
                 </TouchableOpacity>
             ))}
+            <View style={{paddingTop:20}}>
             <Button
                 title="Go Back"
                 onPress={() => navigation.goBack()}
             />
+            </View>
+            
         </View>
     );
 }
