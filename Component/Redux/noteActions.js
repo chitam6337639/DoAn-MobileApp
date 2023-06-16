@@ -1,5 +1,5 @@
 // noteActions.js
-
+export const CLEAR_NOTES = "CLEAR_NOTES";
 export const ADD_NOTE = "ADD_NOTE";
 
 export const addNote = (note) => {
@@ -8,3 +8,7 @@ export const addNote = (note) => {
     payload: note,
   };
 };
+
+export const clearNotes = () => ({
+    type: CLEAR_NOTES,
+  });
