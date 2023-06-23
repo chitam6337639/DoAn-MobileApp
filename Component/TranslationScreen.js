@@ -31,12 +31,15 @@ const TranslationApp = () => {
     <View>
       <TextInput
         style={{ height: 40, borderColor: 'gray', borderWidth: 1, margin: 10 }}
-        placeholder="Enter text to translate"
+        placeholder="Enter text to translate to VietNamese"
         value={text}
         onChangeText={setText}
       />
       <Button title="Translate" onPress={translateText} />
-      <Text>Translation: {translation}</Text>
+      <View style={{paddingTop:15}}>
+        <Text>Translation: {translation}</Text>
+      </View>
+      
     </View>
   );
 };

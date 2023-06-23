@@ -13,6 +13,7 @@ import English from './Component/Subject/English';
 import BaiDetails from './Component/BaiDetails';
 import HomePage from './Component/HomePage';
 import TranslationScreen from './Component/TranslationScreen';
+import History from './Component/Subject/History'
 //redux
 import { Provider } from "react-redux";
 import { store, persistor } from "./Component/Redux/store";
@@ -26,6 +27,7 @@ function StackNavigator() {
       <Stack.Screen name="Math" options={{ headerShown: false }} component={Math}></Stack.Screen>
       <Stack.Screen name="English" options={{ headerShown: false }} component={English}></Stack.Screen>
       <Stack.Screen name="Details" options={{ headerShown: false }} component={BaiDetails}></Stack.Screen>
+      <Stack.Screen name="History" options={{ headerShown: false }} component={History}></Stack.Screen>
     </Stack.Navigator>
   );
 }
