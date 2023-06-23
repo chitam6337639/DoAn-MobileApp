@@ -11,11 +11,8 @@
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
     "@react-native-async-storage/async-storage": "1.17.11",
- thanhBranch
     "@react-native-community/google-signin": "^5.0.0",
     "@react-native-community/netinfo": "^9.3.10",
-
- main
     "@react-navigation/drawer": "^6.6.2",
     "@react-navigation/stack": "^6.3.16",
     "axios": "^1.4.0",
@@ -27,7 +24,6 @@
     "react-native": "0.71.8",
     "react-native-animatable": "^1.3.3",
     "react-native-elements": "^3.4.3",
-  
     "react-native-reanimated": "~2.14.4",
     "react-native-text-to-speech": "^4.1.4",
     "react-native-vector-icons": "^9.2.0",
