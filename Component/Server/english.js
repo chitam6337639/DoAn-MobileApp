@@ -23,5 +23,11 @@ export const ENGLISH =
             name:'Bai 4',
             question:'What is teacher mean?',
             answear:'Giao vien'
+        },
+        {
+            id: 4,
+            name:'Bai 5',
+            question:'What is Nguyen Chi Tam?',
+            answear:'Con bao'
         }
     ];
