@@ -24,7 +24,14 @@ function HomePage({ navigation }) {
                     onPress={() => navigation.navigate('English')}
                 />
             </Card>
-
+            <Divider />
+            <Card>
+            <Card.Image source={require('../assets/historyF.jpg')} />
+                <Button
+                    title="Learn some History"
+                    onPress={() => navigation.navigate('History')}
+                />
+            </Card>
         </View>
     );
 }

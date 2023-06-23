@@ -5,19 +5,20 @@ import { useState } from "react";
 import { View } from "react-native";
 function BaiDetails({route,navigation})
 {
+    let isDone = false;
     const [inputValue, setInputValue] = useState("");
     const {item} = route.params;
     const handleResult = ()=>{
         if(inputValue==item.answear)
         {
             return (
-                Alert.alert('Ban da lam dung')
+                Alert.alert('Bạn đã làm đúng')
                 
             )
         }
         else 
         return(
-            Alert.alert('Ban da lam sai')
+            Alert.alert('Bạn đã làm sai')
         )
     }
     const handleInputChange = (text)=>{
