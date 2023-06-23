@@ -12,6 +12,7 @@ import Note from './Component/Note';
 import English from './Component/Subject/English';
 import BaiDetails from './Component/BaiDetails';
 import HomePage from './Component/HomePage';
+import TranslationScreen from './Component/TranslationScreen';
 //redux
 import { Provider } from "react-redux";
 import { store, persistor } from "./Component/Redux/store";
@@ -68,6 +69,13 @@ class App extends Component {
               <Drawer.Screen name="Dictionary" component={Dictionary} options={{
                 drawerIcon: ({ focused, size }) => (<FontAwesome
                   name="book"
+                  size={size}
+                  color={focused ? '#7cc' : '#ccc'}
+                />)
+              }} />
+                <Drawer.Screen name="Translation" component={TranslationScreen} options={{
+                drawerIcon: ({ focused, size }) => (<FontAwesome
+                  name="google"
                   size={size}
                   color={focused ? '#7cc' : '#ccc'}
                 />)

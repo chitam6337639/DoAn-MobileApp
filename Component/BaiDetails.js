@@ -2,6 +2,7 @@ import { Button, Card, Input } from "react-native-elements"
 import { Alert, Text } from "react-native";
 import { useState } from "react";
 
+import { View } from "react-native";
 function BaiDetails({route,navigation})
 {
     const [inputValue, setInputValue] = useState("");
@@ -27,7 +28,10 @@ function BaiDetails({route,navigation})
             <Card.Title>{item.name}</Card.Title>
             <Text>{item.question}</Text>
             <Input onChangeText={handleInputChange}></Input>
+            <View style={{margin:20}}>
             <Button title={'Submit'}onPress={handleResult}></Button>
+            </View>
+            
             <Button title={'Go Back'}onPress={()=>{navigation.goBack()}}></Button>
         </Card>
     )
