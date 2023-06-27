@@ -1,10 +1,10 @@
-import { Card } from "react-native-elements";
+import { Button, Card } from "react-native-elements";
 import { View,Text } from "react-native";
-const { Component } = require("react")
 
 
-class Contact extends Component {
-    render() {
+
+function Contact({navigation}) {
+   
         return (
            <View style={{padding:10}}>
                 <Card>
@@ -21,10 +21,15 @@ class Contact extends Component {
                         PhoneNum:
                         Email:
                     </Text>
+                    <View style={{padding:10}}></View>
+                    <Button title='Send feedback here' onPress={()=> navigation.navigate('Feedback')}>
+
+</Button>
                 </Card>
+               
             </View>
         );
     }
-}
+
 
 export default Contact;
