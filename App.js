@@ -18,6 +18,7 @@ import History from './Component/Subject/History'
 import { Provider } from "react-redux";
 import { store, persistor } from "./Component/Redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Contact from './Component/Contact';
 const Stack = createStackNavigator();
 
 function StackNavigator() {
@@ -78,6 +79,13 @@ class App extends Component {
                 <Drawer.Screen name="Translation" component={TranslationScreen} options={{
                 drawerIcon: ({ focused, size }) => (<FontAwesome
                   name="google"
+                  size={size}
+                  color={focused ? '#7cc' : '#ccc'}
+                />)
+              }} />
+              <Drawer.Screen name="Contact" component={Contact} options={{
+                drawerIcon: ({ focused, size }) => (<FontAwesome
+                  name="address-book"
                   size={size}
                   color={focused ? '#7cc' : '#ccc'}
                 />)
