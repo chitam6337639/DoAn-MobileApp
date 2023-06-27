@@ -19,6 +19,18 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./Component/Redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import Contact from './Component/Contact';
+import Feedback from './Component/Feedback';
+// firebase
+import { initializeApp } from 'firebase/app';
+
+
+const firebaseConfig = { databaseURL: 'https://doannopthay-default-rtdb.asia-southeast1.firebasedatabase.app/' };
+initializeApp(firebaseConfig);
+
+// const database = getDatabase();
+// export defaultdatabase;
+
+
 const Stack = createStackNavigator();
 
 function StackNavigator() {
@@ -30,6 +42,16 @@ function StackNavigator() {
       <Stack.Screen name="Details" options={{ headerShown: false }} component={BaiDetails}></Stack.Screen>
       <Stack.Screen name="History" options={{ headerShown: false }} component={History}></Stack.Screen>
     </Stack.Navigator>
+  );
+}
+const Stack2 = createStackNavigator();
+function StackNavigator1()
+{
+  return(
+    <Stack2.Navigator>
+      <Stack2.Screen name="Contact" component={Contact} options={{headerShown: false}}></Stack2.Screen>
+      <Stack2.Screen name="Feedback" component={Feedback} options={{headerShown: false}}></Stack2.Screen>
+    </Stack2.Navigator>
   );
 }
 const Drawer = createDrawerNavigator();
@@ -83,13 +105,15 @@ class App extends Component {
                   color={focused ? '#7cc' : '#ccc'}
                 />)
               }} />
-              <Drawer.Screen name="Contact" component={Contact} options={{
+               <Drawer.Screen name="Contact & Feedback" component={StackNavigator1} options={{
                 drawerIcon: ({ focused, size }) => (<FontAwesome
                   name="address-book"
                   size={size}
                   color={focused ? '#7cc' : '#ccc'}
                 />)
               }} />
+              
+              
             </Drawer.Navigator>
           </NavigationContainer>
         </PersistGate>
