@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, ScrollView, Button, Modal, TextInput, TouchableOpacity } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { addNote, clearNotes } from "./Redux/noteActions";
+import { addNote, clearNotes ,updateNote,deleteNote} from "./Redux/noteActions";
 
 import * as Animatable from 'react-native-animatable';
 import { useState, useCallback } from "react";
@@ -25,19 +25,24 @@ const Note = () => {
         }
 
         if (selectedIndex !== null) {
-            const updatedNotes = [...notes];
-            updatedNotes[selectedIndex] = text;
-            dispatch(addNote(updatedNotes));
+            dispatch(updateNote(selectedIndex, text));
         } else {
-            dispatch(addNote([...notes, text]));
+            dispatch(addNote(text));
         }
 
         setNoteModalOpen(false);
         setSelectedIndex(null);
     }, [text, notes, selectedIndex, dispatch]);
+    const onDeleteNote = useCallback(() => {
+        if (selectedIndex !== null) {
+            dispatch(deleteNote(selectedIndex));
+            setNoteModalOpen(false);
+            setSelectedIndex(null);
+        }
+    }, [selectedIndex, dispatch]);
 
     let noteStyle = [styles.note];
-    const textProps = listView ? { numberOfLines: 3 } : {};
+    const textProps = listView ? { numberOfLines: 5 } : {};
     if (listView) {
         noteStyle = noteStyle.concat(styles.noteListView);
     }
@@ -86,6 +91,9 @@ const Note = () => {
 
                         <View style={styles.modalButton}>
                             <Button color="red" title="Cancel" onPress={() => setNoteModalOpen(false)} />
+                        </View>
+                        <View  style={styles.modalButton}>
+                            <Button color="red" title="Delete" onPress={() =>onDeleteNote(false)} />
                         </View>
                     </View>
                 </Modal>
