@@ -67,7 +67,7 @@ class Calculator extends Component {
             {this.NumButton(0)}
             {this.NumExpression("C")}
             {this.NumExpression("=")}
-            {this.NumExpression("*")}
+            {this.NumExpression("/")}
           </View>
         </View>
       </View>

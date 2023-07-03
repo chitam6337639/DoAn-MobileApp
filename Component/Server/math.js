@@ -10,18 +10,18 @@ export const MATH =
             id: 1,
             name:'Bài 2',
             question:'1 - 1 = ?',
-            answear:'2'
+            answear:'0'
         },
         {
             id: 2,
             name:'Bài 3',
             question:'1 * 1 = ?',
-            answear:'2'
+            answear:'1'
         },
         {
             id: 3,
             name:'Bài 4',
             question:'1 / 1 = ?',
-            answear:'2'
+            answear:'1'
         }
     ];
