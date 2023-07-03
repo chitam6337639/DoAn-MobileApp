@@ -25,7 +25,7 @@ function Feedback({ navigation }) {
         placeholder="Enter text"
         onChangeText={(value) => setText(value)}
       />
-      <Button title="Push to Database" onPress={handleButtonPress} />
+      <Button title="Submit your thought" onPress={handleButtonPress} />
       <View style={{padding:10}}></View>
       <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
