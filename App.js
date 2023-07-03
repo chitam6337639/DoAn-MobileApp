@@ -14,6 +14,7 @@ import BaiDetails from './Component/BaiDetails';
 import HomePage from './Component/HomePage';
 import TranslationScreen from './Component/TranslationScreen';
 import History from './Component/Subject/History'
+import AdminPage from './Component/admin/adminPage';
 //redux
 import { Provider } from "react-redux";
 import { store, persistor } from "./Component/Redux/store";
@@ -112,7 +113,13 @@ class App extends Component {
                   color={focused ? '#7cc' : '#ccc'}
                 />)
               }} />
-              
+                <Drawer.Screen name="Admin (Underconstruced)" component={AdminPage} options={{
+                drawerIcon: ({ focused, size }) => (<FontAwesome
+                  name="cog"
+                  size={size}
+                  color={focused ? '#7cc' : '#ccc'}
+                />)
+              }} />
               
             </Drawer.Navigator>
           </NavigationContainer>
